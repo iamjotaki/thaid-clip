@@ -125,7 +125,7 @@
   <!-- ======================================================== -->
   <!-- 2. STUDIO MAIN CONTAINER                                -->
   <!-- ======================================================== -->
-  <main class="max-w-[1700px] w-full mx-auto px-4 sm:px-6 pt-24 pb-12 flex-1 flex flex-col gap-6">
+  <main class="max-w-5xl w-full mx-auto px-4 sm:px-6 pt-24 pb-12 flex-1 flex flex-col gap-6">
 
     <!-- Top Ribbon: Quick Creator Form -->
     <section class="bg-white rounded-2xl p-5 sm:p-6 border border-black/[0.06] dark:border-black/[0.08] shadow-sm">
@@ -133,19 +133,19 @@
         
         <div class="flex items-center justify-between flex-wrap gap-2">
           <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-pink-500">auto_videocam</span>
+            <span class="material-symbols-outlined text-[#0569ff]">auto_videocam</span>
             <h2 class="text-sm font-bold uppercase tracking-wider text-stone-500 dark:text-[#737373]">ระบบสร้างคลิปสั้น 9:16 อัตโนมัติ (Shorts & Reels AI)</h2>
           </div>
           <div class="flex items-center gap-2 text-xs">
             <span class="text-[#737373]">สัดส่วน:</span>
-            <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 font-mono font-bold text-pink-500">1080×1920 (9:16)</span>
+            <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 font-mono font-bold text-[#0569ff]">1080×1920 (9:16)</span>
           </div>
         </div>
 
         <!-- Topic Input Bar -->
         <div class="flex flex-col sm:flex-row items-center gap-3">
           <div class="relative flex-1 w-full">
-            <input id="inputTopic" type="text" value="แก้วกาแฟเก็บความเย็นสไตล์มินิมอล ถือนอกบ้านเท่ๆ เก็บน้ำแข็งได้ 24 ชั่วโมง" placeholder="พิมพ์หัวข้อสินค้า ข่าวสาร หรือเรื่องที่ต้องการทำคลิป..." class="w-full bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl pl-4 pr-24 py-3 text-sm text-[#2b313b] placeholder-stone-400 focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all font-medium">
+            <input id="inputTopic" type="text" value="แก้วกาแฟเก็บความเย็นสไตล์มินิมอล ถือนอกบ้านเท่ๆ เก็บน้ำแข็งได้ 24 ชั่วโมง" placeholder="พิมพ์หัวข้อสินค้า ข่าวสาร หรือเรื่องที่ต้องการทำคลิป..." class="w-full bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl pl-4 pr-24 py-3 text-sm text-[#2b313b] placeholder-stone-400 focus:outline-none focus:border-[#0569ff] focus:ring-1 focus:ring-pink-500 transition-all font-medium">
             <button onclick="fillRandomTopic()" class="absolute right-2 top-2 px-2.5 py-1.5 rounded-lg bg-stone-200 dark:bg-stone-800 hover:bg-stone-300 dark:hover:bg-stone-700 text-[11px] font-semibold text-stone-600 dark:text-stone-700 transition-colors flex items-center gap-1">
               <span class="material-symbols-outlined text-[13px]">casino</span>
               <span>สุ่มหัวข้อ</span>
@@ -153,7 +153,7 @@
           </div>
 
           <!-- Master Action Button -->
-          <button onclick="handleQuickCreate()" id="btnQuickCreate" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap">
+          <button onclick="handleQuickCreate()" id="btnQuickCreate" class="w-full sm:w-auto px-6 py-3 rounded-full bg-[#171717] hover:bg-black text-white font-semibold text-xs shadow-sm hover:shadow transition-all flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-[0.99] whitespace-nowrap cursor-pointer">
             <span class="material-symbols-outlined text-[18px]">bolt</span>
             <span id="btnCreateText">สร้างคลิปวิดีโอทันที (1-Click AI)</span>
           </button>
@@ -165,16 +165,16 @@
           <!-- Style Chips -->
           <div class="md:col-span-8 flex items-center gap-2 flex-wrap">
             <span class="text-xs font-semibold text-stone-500 dark:text-[#737373] mr-1">สไตล์คลิป:</span>
-            <button onclick="setStyle('affiliate')" class="style-chip active px-3 py-1 rounded-lg text-xs font-semibold bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500" data-style="affiliate">
+            <button onclick="setStyle('affiliate')" class="style-chip active px-3 py-1 rounded-lg text-xs font-semibold bg-[#0569ff]/10 text-[#0569ff] border border-[#0569ff]" data-style="affiliate">
               🛍️ รีวิวป้ายยา Affiliate
             </button>
-            <button onclick="setStyle('storytelling')" class="style-chip px-3 py-1 rounded-lg text-xs font-semibold bg-stone-100 dark:bg-stone-800 text-[#737373] border border-transparent hover:border-pink-500/50" data-style="storytelling">
+            <button onclick="setStyle('storytelling')" class="style-chip px-3 py-1 rounded-lg text-xs font-semibold bg-stone-100 dark:bg-stone-800 text-[#737373] border border-transparent hover:border-[#0569ff]/50" data-style="storytelling">
               📖 เล่าเรื่องสไตล์สารคดี
             </button>
-            <button onclick="setStyle('quick_take')" class="style-chip px-3 py-1 rounded-lg text-xs font-semibold bg-stone-100 dark:bg-stone-800 text-[#737373] border border-transparent hover:border-pink-500/50" data-style="quick_take">
+            <button onclick="setStyle('quick_take')" class="style-chip px-3 py-1 rounded-lg text-xs font-semibold bg-stone-100 dark:bg-stone-800 text-[#737373] border border-transparent hover:border-[#0569ff]/50" data-style="quick_take">
               ⚡ ข่าวสั้นประเด็นด่วน
             </button>
-            <button onclick="setStyle('tips')" class="style-chip px-3 py-1 rounded-lg text-xs font-semibold bg-stone-100 dark:bg-stone-800 text-[#737373] border border-transparent hover:border-pink-500/50" data-style="tips">
+            <button onclick="setStyle('tips')" class="style-chip px-3 py-1 rounded-lg text-xs font-semibold bg-stone-100 dark:bg-stone-800 text-[#737373] border border-transparent hover:border-[#0569ff]/50" data-style="tips">
               💡 ทริก & เคล็ดลับน่ารู้
             </button>
           </div>
@@ -183,7 +183,7 @@
           <div class="md:col-span-4 flex items-center justify-end gap-3 text-xs">
             <!-- BGM Toggle -->
             <label class="flex items-center gap-1.5 cursor-pointer text-[#737373]">
-              <input type="checkbox" id="checkBgm" checked class="accent-pink-500 rounded">
+              <input type="checkbox" id="checkBgm" checked class="accent-[#171717] rounded">
               <span>เพลงประกอบ (BGM)</span>
             </label>
             <span class="text-stone-700 dark:text-stone-700">|</span>
@@ -199,14 +199,14 @@
         <!-- Progress Indicator -->
         <div id="renderProgressContainer" class="hidden mt-2 pt-3 border-t border-stone-200 dark:border-stone-800">
           <div class="flex items-center justify-between text-xs font-semibold mb-1.5">
-            <span class="text-pink-500 flex items-center gap-1.5">
+            <span class="text-[#0569ff] flex items-center gap-1.5">
               <span class="material-symbols-outlined text-[16px] animate-spin">sync</span>
               <span id="renderProgressText">กำลังสร้างสคริปต์ไวรัลด้วย Gemini 3.5 Flash Lite...</span>
             </span>
             <span id="renderProgressPercent" class="text-stone-500 dark:text-[#737373]">10%</span>
           </div>
           <div class="w-full h-2 rounded-full bg-stone-200 dark:bg-stone-800 overflow-hidden">
-            <div id="renderProgressBar" class="h-full bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300" style="width: 10%"></div>
+            <div id="renderProgressBar" class="h-full bg-gradient-to-r from-[#0569ff] to-[#171717] transition-all duration-300" style="width: 10%"></div>
           </div>
         </div>
 
@@ -221,7 +221,7 @@
         
         <div class="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-3">
           <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-pink-500">view_timeline</span>
+            <span class="material-symbols-outlined text-[#0569ff]">view_timeline</span>
             <h3 class="font-bold text-sm text-white">ลำดับฉากวิดีโอ (Timeline & Script Scenes)</h3>
           </div>
           <button onclick="handleGenerateScriptOnly()" class="px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-700 text-xs font-semibold transition-colors flex items-center gap-1">
@@ -237,14 +237,14 @@
           <div class="p-4 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/60 flex flex-col gap-2.5">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-pink-500 text-white text-[11px] font-bold flex items-center justify-center">1</span>
+                <span class="w-6 h-6 rounded-full bg-[#0569ff] text-white text-[11px] font-bold flex items-center justify-center">1</span>
                 <span class="font-bold text-xs text-white">ฉากที่ 1: คำเปิดหยุดนิ้วโป้ง (The Hook)</span>
               </div>
-              <span class="text-[10px] px-2 py-0.5 rounded bg-pink-500/10 text-pink-500 font-mono font-semibold">0 - 3 วินาที</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-[#0569ff]/10 text-[#0569ff] font-mono font-semibold">0 - 3 วินาที</span>
             </div>
             <div>
               <label class="block text-[11px] text-stone-500 dark:text-[#737373] mb-0.5">บทพูดพากย์เสียง (Voice Text):</label>
-              <textarea id="scene1Speech" rows="2" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-pink-500">ใครที่ชอบดื่มน้ำเย็นทั้งวัน บอกเลยว่าแก้วใบนี้คือของที่ต้องมีติดตัวครับ!</textarea>
+              <textarea id="scene1Speech" rows="2" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-[#0569ff]">ใครที่ชอบดื่มน้ำเย็นทั้งวัน บอกเลยว่าแก้วใบนี้คือของที่ต้องมีติดตัวครับ!</textarea>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
@@ -269,7 +269,7 @@
             </div>
             <div>
               <label class="block text-[11px] text-stone-500 dark:text-[#737373] mb-0.5">บทพูดพากย์เสียง (Voice Text):</label>
-              <textarea id="scene2Speech" rows="2" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-pink-500">เก็บความเย็นได้ยาวนาน 24 ชั่วโมง ฝากันหก 100% พกพาสะดวก ดีไซน์มินิมอลวางตรงไหนก็ดูดี</textarea>
+              <textarea id="scene2Speech" rows="2" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-[#0569ff]">เก็บความเย็นได้ยาวนาน 24 ชั่วโมง ฝากันหก 100% พกพาสะดวก ดีไซน์มินิมอลวางตรงไหนก็ดูดี</textarea>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
@@ -294,7 +294,7 @@
             </div>
             <div>
               <label class="block text-[11px] text-stone-500 dark:text-[#737373] mb-0.5">บทพูดพากย์เสียง (Voice Text):</label>
-              <textarea id="scene3Speech" rows="2" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-pink-500">ใครอยากได้ของแท้ราคาโปรโมชั่น รีบกดดูที่ตะกร้าซ้ายล่างได้เลยครับ!</textarea>
+              <textarea id="scene3Speech" rows="2" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-[#0569ff]">ใครอยากได้ของแท้ราคาโปรโมชั่น รีบกดดูที่ตะกร้าซ้ายล่างได้เลยครับ!</textarea>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
@@ -333,14 +333,14 @@
 
             <!-- Video Empty State -->
             <div id="videoEmptyPlaceholder" class="p-6 text-center text-[#737373] flex flex-col items-center justify-center gap-2">
-              <span class="material-symbols-outlined text-[44px] text-pink-500/80 mb-1">play_circle</span>
+              <span class="material-symbols-outlined text-[44px] text-[#0569ff]/80 mb-1">play_circle</span>
               <p class="font-bold text-xs text-stone-200">พรีวิววิดีโอ 9:16</p>
               <p class="text-[11px] text-[#737373]">กดปุ่ม "สร้างคลิปวิดีโอทันที" ด้านบนเพื่อเริ่มเรนเดอร์</p>
             </div>
 
             <!-- Video Loading Spinner -->
             <div id="videoLoadingOverlay" class="hidden absolute inset-0 bg-black/75 backdrop-blur-xs flex flex-col items-center justify-center gap-3 p-6 text-center z-20">
-              <span class="material-symbols-outlined text-[36px] text-pink-500 animate-spin">sync</span>
+              <span class="material-symbols-outlined text-[36px] text-[#0569ff] animate-spin">sync</span>
               <p class="text-xs font-bold text-white" id="loadingText">กำลังเรนเดอร์วิดีโอ 9:16...</p>
               <p class="text-[10px] text-[#737373]">ผสมผสานเสียงพากย์ + ซับไตเติล + เพลง BGM</p>
             </div>
@@ -354,7 +354,7 @@
 
         <!-- Video Info & Download CTA -->
         <div id="videoMetaBox" class="w-full max-w-[340px] mt-4 flex flex-col gap-2">
-          <button id="btnDownloadMp4" onclick="downloadCurrentVideo()" disabled class="w-full py-2.5 px-4 rounded-xl bg-pink-600 hover:bg-pink-500 disabled:bg-stone-300 dark:disabled:bg-stone-800 disabled:text-stone-500 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2">
+          <button id="btnDownloadMp4" onclick="downloadCurrentVideo()" disabled class="w-full py-2.5 px-4 rounded-xl bg-pink-600 hover:bg-[#0569ff] disabled:bg-stone-300 dark:disabled:bg-stone-800 disabled:text-stone-500 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2">
             <span class="material-symbols-outlined text-[16px]">download</span>
             <span>ดาวน์โหลดคลิป MP4 (1080×1920)</span>
           </button>
@@ -374,14 +374,14 @@
   <!-- 3. LUXURY FOOTER                                        -->
   <!-- ======================================================== -->
   <footer class="mt-auto border-t border-black/[0.08] bg-white/50 dark:bg-white/50 backdrop-blur-md py-6 text-xs text-stone-500">
-    <div class="max-w-[1700px] w-full mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+    <div class="max-w-5xl w-full mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
       <div class="flex items-center gap-2">
         <span class="font-bold text-white">ThaiD Clip AI Studio</span>
         <span>•</span>
         <span>มาตรฐาน TikTok, Instagram Reels & YouTube Shorts (1080×1920)</span>
       </div>
       <div>
-        <span>ส่วนหนึ่งของ <a href="https://thaid.online" class="text-pink-500 font-semibold hover:underline">ThaiD.online Ecosystem</a></span>
+        <span>ส่วนหนึ่งของ <a href="https://thaid.online" class="text-[#0569ff] font-semibold hover:underline">ThaiD.online Ecosystem</a></span>
       </div>
     </div>
   </footer>
@@ -409,10 +409,10 @@
     function setStyle(styleKey) {
       STATE.activeStyle = styleKey;
       document.querySelectorAll('.style-chip').forEach(btn => {
-        btn.classList.remove('bg-pink-500/10', 'text-pink-600', 'dark:text-pink-400', 'border-pink-500', 'active');
+        btn.classList.remove('bg-[#0569ff]/10', 'text-pink-600', 'dark:text-pink-400', 'border-[#0569ff]', 'active');
         btn.classList.add('bg-stone-100', 'dark:bg-stone-800', 'text-stone-600', 'dark:text-[#737373]', 'border-transparent');
         if (btn.dataset.style === styleKey) {
-          btn.classList.add('bg-pink-500/10', 'text-pink-600', 'dark:text-pink-400', 'border-pink-500', 'active');
+          btn.classList.add('bg-[#0569ff]/10', 'text-pink-600', 'dark:text-pink-400', 'border-[#0569ff]', 'active');
           btn.classList.remove('bg-stone-100', 'dark:bg-stone-800', 'text-stone-600', 'dark:text-[#737373]', 'border-transparent');
         }
       });
@@ -565,7 +565,7 @@
   <!-- THAID MASTER EDITORIAL FOOTER                             -->
   <!-- ======================================================== -->
   <footer class="mt-auto border-t border-black/[0.08] bg-[#fafafa] py-16 px-4 sm:px-6">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
       <div class="flex flex-col items-center md:items-start gap-2">
         <div class="flex items-center gap-2">
           <div class="w-6 h-6 rounded-lg bg-[#2b313b] flex items-center justify-center text-white">
