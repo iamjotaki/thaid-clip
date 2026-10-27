@@ -116,7 +116,7 @@
           <span class="text-[#0569ff] font-bold">✦</span>
           <span>หน้าหลัก ThaiD</span>
         </a>
-        <button onclick="handleQuickCreate()" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-[#171717] hover:bg-black text-white shadow-2xs transition-all hover:scale-[1.02] active:scale-[0.98]"><span class="material-symbols-outlined text-[15px]">auto_videocam</span><span>สร้างคลิปสั้น</span></button>
+        <button onclick="handleQuickCreate()" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-[#171717] hover:bg-black text-white shadow-2xs transition-all hover:scale-[1.02] active:scale-[0.98]"><span class="material-symbols-outlined text-[15px]">bolt</span><span>สร้างคลิป AI ทันที</span></button>
       </div>
 
     </div>
@@ -396,14 +396,9 @@
       videoUrl: null
     };
 
-    // ThaiD Studio Theme
-
-    // ThaiD Studio Theme else {
-        document.documentElement.classList.remove('light');
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('thaid-theme', 'dark');
-        document.getElementById('themeIcon').textContent = 'light_mode';
-      }
+    function initTheme() {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
     }
 
     function setStyle(styleKey) {
