@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th" class="dark scroll-smooth">
+<html lang="th" class="dark scroll-smooth bg-[#141414]">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +7,12 @@
   <meta name="description" content="สร้างคลิปวิดีโอสั้นแนวตั้ง 9:16 สำหรับ TikTok, Instagram Reels และ YouTube Shorts ด้วย AI พากย์เสียงไทย ซับไตเติลคาราโอเกะ พร้อมใช้งาน">
   <link rel="icon" href="https://thaid.online/favicon.ico">
 
-  <script>
-    (function(){
-      try{
-        var s = localStorage.getItem('thaid-theme');
-        if(s === 'light'){
-          document.documentElement.classList.remove('dark');
-          document.documentElement.classList.add('light');
-        } else {
-          document.documentElement.classList.add('dark');
-          document.documentElement.classList.remove('light');
-        }
-      }catch(e){}
-    })();
-  </script>
+  <script>document.documentElement.classList.add("dark");</script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
@@ -36,7 +23,7 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'Prompt', 'sans-serif'],
+            sans: ['"Google Sans"', '"Noto Sans Thai"', '"Plus Jakarta Sans"', 'sans-serif'],
             thai: ['Prompt', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace']
           },
@@ -69,12 +56,12 @@
   </style>
 </head>
 
-<body class="bg-[#f5f5f7] dark:bg-[#0c0c0e] text-[#1d1d1f] dark:text-[#f5f5f7] min-h-screen flex flex-col font-sans selection:bg-pink-500/20 selection:text-pink-500 transition-colors duration-300">
+<body class="bg-[#141414] text-[#f5f5f7] min-h-screen flex flex-col font-sans selection:bg-[#0074e2]/30 selection:text-white">
 
   <!-- ======================================================== -->
   <!-- 1. TRANSLUCENT GLOBAL HEADER (APPLE FROSTED NAVBAR)     -->
   <!-- ======================================================== -->
-  <header class="sticky top-0 z-50 h-[52px] bg-white/80 dark:bg-[#161619]/80 backdrop-blur-xl border-b border-black/[0.08] dark:border-white/[0.08] shadow-xs">
+  <header class="sticky top-0 z-50 border-b border-white/[0.08] bg-[#141414]/90 backdrop-blur-md">
     <div class="max-w-[1700px] w-full mx-auto px-4 sm:px-6 h-full flex items-center justify-between gap-4">
       
       <!-- Brand Logo -->
@@ -83,7 +70,7 @@
           <span class="material-symbols-outlined text-[17px]">movie</span>
         </div>
         <div class="flex items-center gap-1.5">
-          <span class="text-sm sm:text-base font-bold tracking-tight text-[#1d1d1f] dark:text-white">
+          <span class="text-sm sm:text-base font-bold tracking-tight text-white">
             ThaiD<span class="text-pink-500">.online</span>
           </span>
           <span class="bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/20 text-[9px] font-bold px-1.5 py-0.5 rounded tracking-wider uppercase">
@@ -93,7 +80,7 @@
       </a>
 
       <!-- Center: Contextual Segmented Navigation Links (Unified Ecosystem Standard) -->
-      <nav class="hidden lg:flex items-center gap-1 bg-stone-200/60 dark:bg-white/[0.06] p-1 rounded-xl border border-black/[0.04] dark:border-white/[0.05] text-xs font-medium">
+      <nav class="hidden lg:flex items-center gap-1 bg-white/[0.04] p-1 rounded-xl border border-black/[0.04] dark:border-white/[0.05] text-xs font-medium">
         <a href="https://thaid.online" class="px-2.5 py-1 rounded-lg text-[#86868b] hover:text-[#1d1d1f] dark:text-stone-400 dark:hover:text-white transition-colors flex items-center gap-1">
           <span class="material-symbols-outlined text-[13px]">hub</span>
           <span>ThaiD Hub</span>
@@ -123,9 +110,7 @@
           <span class="font-medium text-[11px]">9:16 Video Engine</span>
         </div>
 
-        <button id="themeToggleBtn" onclick="toggleTheme()" class="p-1.5 rounded-lg text-stone-600 hover:text-[#1d1d1f] dark:text-stone-400 dark:hover:text-stone-100 hover:bg-stone-200/60 dark:hover:bg-white/10 transition-colors" title="สลับโหมดมืด / สว่าง">
-          <span id="themeIcon" class="material-symbols-outlined text-[19px]">light_mode</span>
-        </button>
+        <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-[11px] text-stone-400"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span>Fastwork Studio</span></div>
       </div>
 
     </div>
@@ -137,7 +122,7 @@
   <main class="max-w-[1700px] w-full mx-auto px-4 sm:px-6 py-6 flex-1 flex flex-col gap-6">
 
     <!-- Top Ribbon: Quick Creator Form -->
-    <section class="bg-white dark:bg-[#161619] rounded-2xl p-5 sm:p-6 border border-black/[0.06] dark:border-white/[0.08] shadow-sm">
+    <section class="bg-[#1b1b1e] rounded-2xl p-5 sm:p-6 border border-black/[0.06] dark:border-white/[0.08] shadow-sm">
       <div class="flex flex-col gap-4">
         
         <div class="flex items-center justify-between flex-wrap gap-2">
@@ -154,7 +139,7 @@
         <!-- Topic Input Bar -->
         <div class="flex flex-col sm:flex-row items-center gap-3">
           <div class="relative flex-1 w-full">
-            <input id="inputTopic" type="text" value="แก้วกาแฟเก็บความเย็นสไตล์มินิมอล ถือนอกบ้านเท่ๆ เก็บน้ำแข็งได้ 24 ชั่วโมง" placeholder="พิมพ์หัวข้อสินค้า ข่าวสาร หรือเรื่องที่ต้องการทำคลิป..." class="w-full bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl pl-4 pr-24 py-3 text-sm text-[#1d1d1f] dark:text-white placeholder-stone-400 focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all font-medium">
+            <input id="inputTopic" type="text" value="แก้วกาแฟเก็บความเย็นสไตล์มินิมอล ถือนอกบ้านเท่ๆ เก็บน้ำแข็งได้ 24 ชั่วโมง" placeholder="พิมพ์หัวข้อสินค้า ข่าวสาร หรือเรื่องที่ต้องการทำคลิป..." class="w-full bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl pl-4 pr-24 py-3 text-sm text-white placeholder-stone-400 focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all font-medium">
             <button onclick="fillRandomTopic()" class="absolute right-2 top-2 px-2.5 py-1.5 rounded-lg bg-stone-200 dark:bg-stone-800 hover:bg-stone-300 dark:hover:bg-stone-700 text-[11px] font-semibold text-stone-600 dark:text-stone-300 transition-colors flex items-center gap-1">
               <span class="material-symbols-outlined text-[13px]">casino</span>
               <span>สุ่มหัวข้อ</span>
@@ -177,13 +162,13 @@
             <button onclick="setStyle('affiliate')" class="style-chip active px-3 py-1 rounded-lg text-xs font-semibold bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500" data-style="affiliate">
               🛍️ รีวิวป้ายยา Affiliate
             </button>
-            <button onclick="setStyle('storytelling')" class="style-chip px-3 py-1 rounded-lg text-xs font-semibold bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 border border-transparent hover:border-pink-500/50" data-style="storytelling">
+            <button onclick="setStyle('storytelling')" class="style-chip px-3 py-1 rounded-lg text-xs font-semibold bg-stone-100 dark:bg-stone-800 text-stone-400 border border-transparent hover:border-pink-500/50" data-style="storytelling">
               📖 เล่าเรื่องสไตล์สารคดี
             </button>
-            <button onclick="setStyle('quick_take')" class="style-chip px-3 py-1 rounded-lg text-xs font-semibold bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 border border-transparent hover:border-pink-500/50" data-style="quick_take">
+            <button onclick="setStyle('quick_take')" class="style-chip px-3 py-1 rounded-lg text-xs font-semibold bg-stone-100 dark:bg-stone-800 text-stone-400 border border-transparent hover:border-pink-500/50" data-style="quick_take">
               ⚡ ข่าวสั้นประเด็นด่วน
             </button>
-            <button onclick="setStyle('tips')" class="style-chip px-3 py-1 rounded-lg text-xs font-semibold bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 border border-transparent hover:border-pink-500/50" data-style="tips">
+            <button onclick="setStyle('tips')" class="style-chip px-3 py-1 rounded-lg text-xs font-semibold bg-stone-100 dark:bg-stone-800 text-stone-400 border border-transparent hover:border-pink-500/50" data-style="tips">
               💡 ทริก & เคล็ดลับน่ารู้
             </button>
           </div>
@@ -191,13 +176,13 @@
           <!-- Engine & BGM Toggles -->
           <div class="md:col-span-4 flex items-center justify-end gap-3 text-xs">
             <!-- BGM Toggle -->
-            <label class="flex items-center gap-1.5 cursor-pointer text-stone-600 dark:text-stone-400">
+            <label class="flex items-center gap-1.5 cursor-pointer text-stone-400">
               <input type="checkbox" id="checkBgm" checked class="accent-pink-500 rounded">
               <span>เพลงประกอบ (BGM)</span>
             </label>
             <span class="text-stone-300 dark:text-stone-700">|</span>
             <!-- Engine Dropdown -->
-            <select id="selectEngine" class="bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs rounded-lg px-2 py-1 text-[#1d1d1f] dark:text-white font-medium focus:outline-none">
+            <select id="selectEngine" class="bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs rounded-lg px-2 py-1 text-white font-medium focus:outline-none">
               <option value="flux">⚡ Flux 9:16 (เร็ว 15-20s)</option>
               <option value="flow">🎬 Google Flow Veo (VM 1)</option>
             </select>
@@ -226,12 +211,12 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
       
       <!-- Left 7 Cols: Scene Script Breakdown -->
-      <section class="lg:col-span-7 bg-white dark:bg-[#161619] rounded-2xl p-5 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex flex-col gap-4">
+      <section class="lg:col-span-7 bg-[#1b1b1e] rounded-2xl p-5 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex flex-col gap-4">
         
         <div class="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-3">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-pink-500">view_timeline</span>
-            <h3 class="font-bold text-sm text-[#1d1d1f] dark:text-white">ลำดับฉากวิดีโอ (Timeline & Script Scenes)</h3>
+            <h3 class="font-bold text-sm text-white">ลำดับฉากวิดีโอ (Timeline & Script Scenes)</h3>
           </div>
           <button onclick="handleGenerateScriptOnly()" class="px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 text-xs font-semibold transition-colors flex items-center gap-1">
             <span class="material-symbols-outlined text-[13px]">edit_note</span>
@@ -247,22 +232,22 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
                 <span class="w-6 h-6 rounded-full bg-pink-500 text-white text-[11px] font-bold flex items-center justify-center">1</span>
-                <span class="font-bold text-xs text-[#1d1d1f] dark:text-white">ฉากที่ 1: คำเปิดหยุดนิ้วโป้ง (The Hook)</span>
+                <span class="font-bold text-xs text-white">ฉากที่ 1: คำเปิดหยุดนิ้วโป้ง (The Hook)</span>
               </div>
               <span class="text-[10px] px-2 py-0.5 rounded bg-pink-500/10 text-pink-500 font-mono font-semibold">0 - 3 วินาที</span>
             </div>
             <div>
               <label class="block text-[11px] text-stone-500 dark:text-stone-400 mb-0.5">บทพูดพากย์เสียง (Voice Text):</label>
-              <textarea id="scene1Speech" rows="2" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-xs text-[#1d1d1f] dark:text-white focus:outline-none focus:border-pink-500">ใครที่ชอบดื่มน้ำเย็นทั้งวัน บอกเลยว่าแก้วใบนี้คือของที่ต้องมีติดตัวครับ!</textarea>
+              <textarea id="scene1Speech" rows="2" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-pink-500">ใครที่ชอบดื่มน้ำเย็นทั้งวัน บอกเลยว่าแก้วใบนี้คือของที่ต้องมีติดตัวครับ!</textarea>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
                 <label class="block text-[10px] text-stone-500 dark:text-stone-400 mb-0.5">ซับไตเติลบนคลิป:</label>
-                <input id="scene1Sub" type="text" value="ห้ามพลาด! แก้วมินิมอลสายดื่มเย็น" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-[#1d1d1f] dark:text-white focus:outline-none">
+                <input id="scene1Sub" type="text" value="ห้ามพลาด! แก้วมินิมอลสายดื่มเย็น" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-white focus:outline-none">
               </div>
               <div>
                 <label class="block text-[10px] text-stone-500 dark:text-stone-400 mb-0.5">ภาพประกอบ (AI Prompt):</label>
-                <input id="scene1Visual" type="text" value="Cinematic close-up of sleek aesthetic tumbler with water droplets on ice" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-[#1d1d1f] dark:text-white focus:outline-none font-mono">
+                <input id="scene1Visual" type="text" value="Cinematic close-up of sleek aesthetic tumbler with water droplets on ice" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-white focus:outline-none font-mono">
               </div>
             </div>
           </div>
@@ -272,22 +257,22 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
                 <span class="w-6 h-6 rounded-full bg-purple-500 text-white text-[11px] font-bold flex items-center justify-center">2</span>
-                <span class="font-bold text-xs text-[#1d1d1f] dark:text-white">ฉากที่ 2: จุดเด่น & ความคุ้มค่า (The Value)</span>
+                <span class="font-bold text-xs text-white">ฉากที่ 2: จุดเด่น & ความคุ้มค่า (The Value)</span>
               </div>
               <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/10 text-purple-500 font-mono font-semibold">3 - 15 วินาที</span>
             </div>
             <div>
               <label class="block text-[11px] text-stone-500 dark:text-stone-400 mb-0.5">บทพูดพากย์เสียง (Voice Text):</label>
-              <textarea id="scene2Speech" rows="2" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-xs text-[#1d1d1f] dark:text-white focus:outline-none focus:border-pink-500">เก็บความเย็นได้ยาวนาน 24 ชั่วโมง ฝากันหก 100% พกพาสะดวก ดีไซน์มินิมอลวางตรงไหนก็ดูดี</textarea>
+              <textarea id="scene2Speech" rows="2" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-pink-500">เก็บความเย็นได้ยาวนาน 24 ชั่วโมง ฝากันหก 100% พกพาสะดวก ดีไซน์มินิมอลวางตรงไหนก็ดูดี</textarea>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
                 <label class="block text-[10px] text-stone-500 dark:text-stone-400 mb-0.5">ซับไตเติลบนคลิป:</label>
-                <input id="scene2Sub" type="text" value="เก็บเย็น 24 ชม. ไม่หกเลอะเทอะ" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-[#1d1d1f] dark:text-white focus:outline-none">
+                <input id="scene2Sub" type="text" value="เก็บเย็น 24 ชม. ไม่หกเลอะเทอะ" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-white focus:outline-none">
               </div>
               <div>
                 <label class="block text-[10px] text-stone-500 dark:text-stone-400 mb-0.5">ภาพประกอบ (AI Prompt):</label>
-                <input id="scene2Visual" type="text" value="Modern luxury desk setup with elegant tumbler, soft natural lighting" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-[#1d1d1f] dark:text-white focus:outline-none font-mono">
+                <input id="scene2Visual" type="text" value="Modern luxury desk setup with elegant tumbler, soft natural lighting" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-white focus:outline-none font-mono">
               </div>
             </div>
           </div>
@@ -297,22 +282,22 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
                 <span class="w-6 h-6 rounded-full bg-emerald-500 text-white text-[11px] font-bold flex items-center justify-center">3</span>
-                <span class="font-bold text-xs text-[#1d1d1f] dark:text-white">ฉากที่ 3: ปิดการขาย (Call-To-Action)</span>
+                <span class="font-bold text-xs text-white">ฉากที่ 3: ปิดการขาย (Call-To-Action)</span>
               </div>
               <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500 font-mono font-semibold">15 - 22 วินาที</span>
             </div>
             <div>
               <label class="block text-[11px] text-stone-500 dark:text-stone-400 mb-0.5">บทพูดพากย์เสียง (Voice Text):</label>
-              <textarea id="scene3Speech" rows="2" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-xs text-[#1d1d1f] dark:text-white focus:outline-none focus:border-pink-500">ใครอยากได้ของแท้ราคาโปรโมชั่น รีบกดดูที่ตะกร้าซ้ายล่างได้เลยครับ!</textarea>
+              <textarea id="scene3Speech" rows="2" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-pink-500">ใครอยากได้ของแท้ราคาโปรโมชั่น รีบกดดูที่ตะกร้าซ้ายล่างได้เลยครับ!</textarea>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
                 <label class="block text-[10px] text-stone-500 dark:text-stone-400 mb-0.5">ซับไตเติลบนคลิป:</label>
-                <input id="scene3Sub" type="text" value="กดสั่งซื้อที่ตะกร้าซ้ายล่างได้เลย!" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-[#1d1d1f] dark:text-white focus:outline-none">
+                <input id="scene3Sub" type="text" value="กดสั่งซื้อที่ตะกร้าซ้ายล่างได้เลย!" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-white focus:outline-none">
               </div>
               <div>
                 <label class="block text-[10px] text-stone-500 dark:text-stone-400 mb-0.5">ภาพประกอบ (AI Prompt):</label>
-                <input id="scene3Visual" type="text" value="Happy person smiling holding aesthetic tumbler outdoor sunny park" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-[#1d1d1f] dark:text-white focus:outline-none font-mono">
+                <input id="scene3Visual" type="text" value="Happy person smiling holding aesthetic tumbler outdoor sunny park" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-white focus:outline-none font-mono">
               </div>
             </div>
           </div>
@@ -382,10 +367,10 @@
   <!-- ======================================================== -->
   <!-- 3. LUXURY FOOTER                                        -->
   <!-- ======================================================== -->
-  <footer class="mt-auto border-t border-black/[0.08] dark:border-white/[0.08] bg-white/50 dark:bg-[#161619]/50 backdrop-blur-md py-6 text-xs text-stone-500">
+  <footer class="mt-auto border-t border-white/[0.08] bg-white/50 dark:bg-[#161619]/50 backdrop-blur-md py-6 text-xs text-stone-500">
     <div class="max-w-[1700px] w-full mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
       <div class="flex items-center gap-2">
-        <span class="font-bold text-[#1d1d1f] dark:text-white">ThaiD Clip AI Studio</span>
+        <span class="font-bold text-white">ThaiD Clip AI Studio</span>
         <span>•</span>
         <span>มาตรฐาน TikTok, Instagram Reels & YouTube Shorts (1080×1920)</span>
       </div>
@@ -405,19 +390,9 @@
       videoUrl: null
     };
 
-    function initTheme() {
-      const isDark = document.documentElement.classList.contains('dark');
-      document.getElementById('themeIcon').textContent = isDark ? 'light_mode' : 'dark_mode';
-    }
+    // Fastwork Dark Theme Locked
 
-    function toggleTheme() {
-      const isDark = document.documentElement.classList.contains('dark');
-      if (isDark) {
-        document.documentElement.classList.remove('dark');
-        document.documentElement.classList.add('light');
-        localStorage.setItem('thaid-theme', 'light');
-        document.getElementById('themeIcon').textContent = 'dark_mode';
-      } else {
+    // Fastwork Dark Theme Locked else {
         document.documentElement.classList.remove('light');
         document.documentElement.classList.add('dark');
         localStorage.setItem('thaid-theme', 'dark');
