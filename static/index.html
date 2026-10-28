@@ -337,7 +337,7 @@
             </label>
             <span class="text-stone-700 dark:text-stone-700">|</span>
             <!-- Engine Dropdown -->
-            <select id="selectEngine" class="bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs rounded-lg px-2 py-1 text-white font-medium focus:outline-none">
+            <select id="selectEngine" class="bg-stone-50 border border-stone-300 text-xs rounded-lg px-2 py-1 text-[#171717] font-semibold focus:outline-none">
               <option value="flux">⚡ Flux 9:16 (เร็ว 15-20s)</option>
               <option value="flow">🎬 Google Flow Veo (VM 1)</option>
             </select>
@@ -371,7 +371,7 @@
         <div class="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-3">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-[#0569ff]">view_timeline</span>
-            <h3 class="font-bold text-sm text-white">ลำดับฉากวิดีโอ (Timeline & Script Scenes)</h3>
+            <h3 class="font-bold text-sm text-[#171717]">ลำดับฉากวิดีโอ (Timeline & Script Scenes)</h3>
           </div>
           <button onclick="handleGenerateScriptOnly()" class="px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-700 text-xs font-semibold transition-colors flex items-center gap-1">
             <span class="material-symbols-outlined text-[13px]">edit_note</span>
@@ -387,22 +387,22 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
                 <span class="w-6 h-6 rounded-full bg-[#0569ff] text-white text-[11px] font-bold flex items-center justify-center">1</span>
-                <span class="font-bold text-xs text-white">ฉากที่ 1: คำเปิดหยุดนิ้วโป้ง (The Hook)</span>
+                <span class="font-bold text-xs text-[#171717]">ฉากที่ 1: คำเปิดหยุดนิ้วโป้ง (The Hook)</span>
               </div>
               <span class="text-[10px] px-2 py-0.5 rounded bg-[#0569ff]/10 text-[#0569ff] font-mono font-semibold">0 - 3 วินาที</span>
             </div>
             <div>
-              <label class="block text-[11px] text-stone-500 dark:text-[#737373] mb-0.5">บทพูดพากย์เสียง (Voice Text):</label>
-              <textarea id="scene1Speech" rows="2" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-[#0569ff]">ใครที่ชอบดื่มน้ำเย็นทั้งวัน บอกเลยว่าแก้วใบนี้คือของที่ต้องมีติดตัวครับ!</textarea>
+              <label class="block text-[11px] text-stone-700 font-semibold mb-0.5">บทพูดพากย์เสียง (Voice Text):</label>
+              <textarea id="scene1Speech" rows="2" class="w-full bg-stone-50 border border-stone-300 rounded-lg p-2 text-xs text-[#171717] font-medium focus:outline-none focus:border-[#0569ff]">ใครที่ชอบดื่มน้ำเย็นทั้งวัน บอกเลยว่าแก้วใบนี้คือของที่ต้องมีติดตัวครับ!</textarea>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
-                <label class="block text-[10px] text-stone-500 dark:text-[#737373] mb-0.5">ซับไตเติลบนคลิป:</label>
-                <input id="scene1Sub" type="text" value="ห้ามพลาด! แก้วมินิมอลสายดื่มเย็น" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-white focus:outline-none">
+                <label class="block text-[10px] text-stone-700 font-semibold mb-0.5">ซับไตเติลบนคลิป:</label>
+                <input id="scene1Sub" type="text" value="ห้ามพลาด! แก้วมินิมอลสายดื่มเย็น" class="w-full bg-stone-50 border border-stone-300 rounded-lg px-2 py-1 text-xs text-[#171717] font-medium focus:outline-none">
               </div>
               <div>
-                <label class="block text-[10px] text-stone-500 dark:text-[#737373] mb-0.5">ภาพประกอบ (AI Prompt):</label>
-                <input id="scene1Visual" type="text" value="Cinematic close-up of sleek aesthetic tumbler with water droplets on ice" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-white focus:outline-none font-mono">
+                <label class="block text-[10px] text-stone-700 font-semibold mb-0.5">ภาพประกอบ (AI Prompt):</label>
+                <input id="scene1Visual" type="text" value="Cinematic close-up of sleek aesthetic tumbler with water droplets on ice" class="w-full bg-stone-50 border border-stone-300 rounded-lg px-2 py-1 text-xs text-[#171717] font-mono focus:outline-none">
               </div>
             </div>
           </div>
@@ -412,22 +412,22 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
                 <span class="w-6 h-6 rounded-full bg-purple-500 text-white text-[11px] font-bold flex items-center justify-center">2</span>
-                <span class="font-bold text-xs text-white">ฉากที่ 2: จุดเด่น & ความคุ้มค่า (The Value)</span>
+                <span class="font-bold text-xs text-[#171717]">ฉากที่ 2: จุดเด่น & ความคุ้มค่า (The Value)</span>
               </div>
               <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/10 text-purple-500 font-mono font-semibold">3 - 15 วินาที</span>
             </div>
             <div>
-              <label class="block text-[11px] text-stone-500 dark:text-[#737373] mb-0.5">บทพูดพากย์เสียง (Voice Text):</label>
-              <textarea id="scene2Speech" rows="2" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-[#0569ff]">เก็บความเย็นได้ยาวนาน 24 ชั่วโมง ฝากันหก 100% พกพาสะดวก ดีไซน์มินิมอลวางตรงไหนก็ดูดี</textarea>
+              <label class="block text-[11px] text-stone-700 font-semibold mb-0.5">บทพูดพากย์เสียง (Voice Text):</label>
+              <textarea id="scene2Speech" rows="2" class="w-full bg-stone-50 border border-stone-300 rounded-lg p-2 text-xs text-[#171717] font-medium focus:outline-none focus:border-[#0569ff]">เก็บความเย็นได้ยาวนาน 24 ชั่วโมง ฝากันหก 100% พกพาสะดวก ดีไซน์มินิมอลวางตรงไหนก็ดูดี</textarea>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
-                <label class="block text-[10px] text-stone-500 dark:text-[#737373] mb-0.5">ซับไตเติลบนคลิป:</label>
-                <input id="scene2Sub" type="text" value="เก็บเย็น 24 ชม. ไม่หกเลอะเทอะ" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-white focus:outline-none">
+                <label class="block text-[10px] text-stone-700 font-semibold mb-0.5">ซับไตเติลบนคลิป:</label>
+                <input id="scene2Sub" type="text" value="เก็บเย็น 24 ชม. ไม่หกเลอะเทอะ" class="w-full bg-stone-50 border border-stone-300 rounded-lg px-2 py-1 text-xs text-[#171717] font-medium focus:outline-none">
               </div>
               <div>
-                <label class="block text-[10px] text-stone-500 dark:text-[#737373] mb-0.5">ภาพประกอบ (AI Prompt):</label>
-                <input id="scene2Visual" type="text" value="Modern luxury desk setup with elegant tumbler, soft natural lighting" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-white focus:outline-none font-mono">
+                <label class="block text-[10px] text-stone-700 font-semibold mb-0.5">ภาพประกอบ (AI Prompt):</label>
+                <input id="scene2Visual" type="text" value="Modern luxury desk setup with elegant tumbler, soft natural lighting" class="w-full bg-stone-50 border border-stone-300 rounded-lg px-2 py-1 text-xs text-[#171717] font-mono focus:outline-none">
               </div>
             </div>
           </div>
@@ -437,22 +437,22 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
                 <span class="w-6 h-6 rounded-full bg-emerald-500 text-white text-[11px] font-bold flex items-center justify-center">3</span>
-                <span class="font-bold text-xs text-white">ฉากที่ 3: ปิดการขาย (Call-To-Action)</span>
+                <span class="font-bold text-xs text-[#171717]">ฉากที่ 3: ปิดการขาย (Call-To-Action)</span>
               </div>
               <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500 font-mono font-semibold">15 - 22 วินาที</span>
             </div>
             <div>
-              <label class="block text-[11px] text-stone-500 dark:text-[#737373] mb-0.5">บทพูดพากย์เสียง (Voice Text):</label>
-              <textarea id="scene3Speech" rows="2" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-[#0569ff]">ใครอยากได้ของแท้ราคาโปรโมชั่น รีบกดดูที่ตะกร้าซ้ายล่างได้เลยครับ!</textarea>
+              <label class="block text-[11px] text-stone-700 font-semibold mb-0.5">บทพูดพากย์เสียง (Voice Text):</label>
+              <textarea id="scene3Speech" rows="2" class="w-full bg-stone-50 border border-stone-300 rounded-lg p-2 text-xs text-[#171717] font-medium focus:outline-none focus:border-[#0569ff]">ใครอยากได้ของแท้ราคาโปรโมชั่น รีบกดดูที่ตะกร้าซ้ายล่างได้เลยครับ!</textarea>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
-                <label class="block text-[10px] text-stone-500 dark:text-[#737373] mb-0.5">ซับไตเติลบนคลิป:</label>
-                <input id="scene3Sub" type="text" value="กดสั่งซื้อที่ตะกร้าซ้ายล่างได้เลย!" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-white focus:outline-none">
+                <label class="block text-[10px] text-stone-700 font-semibold mb-0.5">ซับไตเติลบนคลิป:</label>
+                <input id="scene3Sub" type="text" value="กดสั่งซื้อที่ตะกร้าซ้ายล่างได้เลย!" class="w-full bg-stone-50 border border-stone-300 rounded-lg px-2 py-1 text-xs text-[#171717] font-medium focus:outline-none">
               </div>
               <div>
-                <label class="block text-[10px] text-stone-500 dark:text-[#737373] mb-0.5">ภาพประกอบ (AI Prompt):</label>
-                <input id="scene3Visual" type="text" value="Happy person smiling holding aesthetic tumbler outdoor sunny park" class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-2 py-1 text-xs text-white focus:outline-none font-mono">
+                <label class="block text-[10px] text-stone-700 font-semibold mb-0.5">ภาพประกอบ (AI Prompt):</label>
+                <input id="scene3Visual" type="text" value="Happy person smiling holding aesthetic tumbler outdoor sunny park" class="w-full bg-stone-50 border border-stone-300 rounded-lg px-2 py-1 text-xs text-[#171717] font-mono focus:outline-none">
               </div>
             </div>
           </div>
@@ -490,7 +490,7 @@
             <!-- Video Loading Spinner -->
             <div id="videoLoadingOverlay" class="hidden absolute inset-0 bg-black/75 backdrop-blur-xs flex flex-col items-center justify-center gap-3 p-6 text-center z-20">
               <span class="material-symbols-outlined text-[36px] text-[#0569ff] animate-spin">sync</span>
-              <p class="text-xs font-bold text-white" id="loadingText">กำลังเรนเดอร์วิดีโอ 9:16...</p>
+              <p class="text-xs font-bold text-[#171717]" id="loadingText">กำลังเรนเดอร์วิดีโอ 9:16...</p>
               <p class="text-[10px] text-[#737373]">ผสมผสานเสียงพากย์ + ซับไตเติล + เพลง BGM</p>
             </div>
 
