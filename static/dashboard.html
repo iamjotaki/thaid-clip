@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth bg-stone-50 text-[#171717]">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ห้องทำงานสตูดิโอคลิปสั้น (Workspace) | ThaiD Clip AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Prompt', 'Google Sans', 'Noto Sans Thai', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-stone-50 text-[#171717] font-sans pb-24 selection:bg-[#0569ff]/15 selection:text-[#0569ff]">
+
+  <!-- Toast -->
+  <div id="toast" class="hidden fixed bottom-6 right-6 z-[100] bg-[#171717] text-white px-5 py-3 rounded-2xl text-xs font-medium shadow-2xl flex items-center gap-3">
+    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+    <span id="toastMsg">บันทึกข้อมูลเรียบร้อย</span>
+  </div>
+
+  <!-- 1. THAID FLOATING TOP NAVBAR -->
+  <header class="fixed top-0 inset-x-0 z-[60] pt-4 px-4 sm:px-6 pointer-events-none">
+    <div class="max-w-6xl mx-auto flex items-center justify-between pointer-events-auto bg-white/90 backdrop-blur-xl border border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.04)] rounded-full px-4 sm:px-5 py-2.5 relative">
+      <a href="https://clip.thaid.online" class="flex items-center gap-2.5 text-[#2b313b] hover:opacity-85 transition-opacity group flex-shrink-0">
+        <div class="w-7 h-7 rounded-lg bg-[#2b313b] flex items-center justify-center text-white shadow-xs group-hover:scale-105 transition-transform">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/>
+            <line x1="7" y1="2" x2="7" y2="22"/>
+            <line x1="17" y1="2" x2="17" y2="22"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+          </svg>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="font-bold text-lg tracking-tight text-[#2b313b]">ThaiD</span>
+          <span class="text-xs text-stone-300 font-light">/</span>
+          <span class="text-xs font-semibold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full border border-purple-200">Clip AI</span>
+          <span class="text-xs text-stone-300 font-light hidden sm:inline">/</span>
+          <span class="text-xs text-stone-500 font-medium hidden sm:inline">สตูดิโอคลิปสั้น (Workspace)</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <a href="https://clip.thaid.online" class="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-black/[0.08] bg-white hover:bg-stone-50 text-xs font-semibold text-stone-700 shadow-2xs">
+          ← ห้องเรนเดอร์คลิป
+        </a>
+        
+        <!-- SaaS Dropdown -->
+        <div class="relative">
+          <button type="button" onclick="toggleSaasDropdown()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-black/[0.08] bg-white hover:bg-stone-50 text-xs font-semibold text-[#2b313b] shadow-2xs cursor-pointer">
+            <span class="text-[#0569ff] font-bold text-xs">✦</span>
+            <span>เลือกบริการ SaaS</span>
+            <svg class="w-3 h-3 text-stone-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div id="saasMenu" class="hidden absolute right-0 top-full mt-2 w-72 bg-white/95 backdrop-blur-2xl border border-black/[0.08] rounded-2xl shadow-2xl p-2 z-50 text-left">
+            <div class="px-3 py-1.5 text-[10px] font-bold text-stone-400 uppercase tracking-wider border-b border-black/[0.05] mb-1">ThaiD SaaS Network</div>
+            <a href="https://novel.thaid.online" class="block p-2 rounded-xl hover:bg-stone-50 text-stone-700 text-xs font-medium">Novel Studio (แต่งนิยาย)</a>
+            <a href="https://social.thaid.online" class="block p-2 rounded-xl hover:bg-stone-50 text-stone-700 text-xs font-medium">Social Auto-Poster (โพสต์ข่าว)</a>
+            <a href="https://sticker.thaid.online" class="block p-2 rounded-xl hover:bg-stone-50 text-stone-700 text-xs font-medium">LINE Sticker (สติกเกอร์ไลน์)</a>
+            <a href="https://clip.thaid.online" class="block p-2 rounded-xl bg-purple-50 text-purple-700 text-xs font-bold">Clip AI (วิดีโอสั้น 9:16)</a>
+            <a href="https://chat.thaid.online" class="block p-2 rounded-xl hover:bg-stone-50 text-stone-700 text-xs font-medium">Smart Chat (บอทแอดมิน LINE OA)</a>
+            <a href="https://mockup.thaid.online" class="block p-2 rounded-xl hover:bg-stone-50 text-stone-700 text-xs font-medium">Mockup Studio (สินค้า 4K)</a>
+            <a href="https://vault.thaid.online" class="block p-2 rounded-xl hover:bg-stone-50 text-stone-700 text-xs font-medium">Private Vault (คลังความปลอดภัย)</a>
+          </div>
+        </div>
+
+        <!-- User Profile Pill -->
+        <div class="flex items-center gap-1.5 p-1 pl-1.5 pr-2.5 rounded-full border border-black/[0.08] bg-white shadow-2xs">
+          <img src="https://api.dicebear.com/7.x/bottts/svg?seed=ClipCreator" class="w-5 h-5 rounded-full bg-purple-100" alt="Avatar">
+          <span class="text-xs font-semibold text-[#2b313b]">ครีเอเตอร์ วิดีโอไวรัล</span>
+          <span class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-purple-100 text-purple-700">PRO</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. MAIN CONTENT -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28">
+    
+    <!-- Hero Banner -->
+    <div class="bg-white rounded-3xl border border-black/[0.08] p-6 sm:p-8 shadow-sm">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-[10px] font-bold text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded-full border border-purple-200">
+              🎬 SHORTS & REELS CREATOR WORKSPACE
+            </span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-[#171717]">
+            ห้องทำงานวิดีโอคลิปสั้น · My Shorts & Reels Library
+          </h1>
+          <p class="text-xs sm:text-sm text-stone-500 mt-1 max-w-xl leading-relaxed">
+            รวมคลังคลิปสั้น 9:16 สไตล์ไวรัลที่สร้างเสร็จแล้ว จัดการร่างสคริปต์ 3 ฉาก และดาวน์โหลดวิดีโอ MP4 คมชัดสูง
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2.5">
+          <a href="https://clip.thaid.online" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-2xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold shadow-xs transition-all cursor-pointer">
+            <span>+ สร้างคลิปสั้นใหม่</span>
+          </a>
+          <button onclick="showToast('รีเฟรชคิวเรนเดอร์ล่าสุดแล้ว')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-2xl border border-black/[0.08] bg-white hover:bg-stone-50 text-xs font-semibold text-stone-700 shadow-xs cursor-pointer">
+            <span>🔄 คิวเรนเดอร์</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 Counter Cards -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 mt-5">
+      <div class="bg-white rounded-2xl border border-black/[0.08] p-4.5 shadow-xs">
+        <div class="text-xs font-bold text-stone-500 mb-1">คลิปที่สร้างเสร็จ</div>
+        <div class="text-2xl font-black text-purple-600">12 คลิป</div>
+        <div class="text-[11px] text-stone-400 mt-0.5">TikTok, Reels, Shorts</div>
+      </div>
+      <div class="bg-white rounded-2xl border border-black/[0.08] p-4.5 shadow-xs">
+        <div class="text-xs font-bold text-stone-500 mb-1">ยอดดาวน์โหลด MP4</div>
+        <div class="text-2xl font-black text-emerald-600">38 ครั้ง</div>
+        <div class="text-[11px] text-stone-400 mt-0.5">ความละเอียด 1080x1920</div>
+      </div>
+      <div class="bg-white rounded-2xl border border-black/[0.08] p-4.5 shadow-xs">
+        <div class="text-xs font-bold text-stone-500 mb-1">สไตล์ยอดนิยม</div>
+        <div class="text-2xl font-black text-indigo-600">รีวิวป้ายยา</div>
+        <div class="text-[11px] text-stone-400 mt-0.5">ติด Affiliate ได้ทันที</div>
+      </div>
+      <div class="bg-white rounded-2xl border border-black/[0.08] p-4.5 shadow-xs">
+        <div class="text-xs font-bold text-stone-500 mb-1">เครดิตคลิปคงเหลือ</div>
+        <div class="text-2xl font-black text-[#0569ff]">18 / 30 คลิป</div>
+        <div class="text-[11px] text-stone-400 mt-0.5">Pro Creator Plan</div>
+      </div>
+    </div>
+
+    <!-- Segmented Tabs -->
+    <div class="bg-white rounded-2xl border border-black/[0.08] p-1.5 shadow-xs mt-6 flex items-center gap-1.5 overflow-x-auto">
+      <button onclick="switchTab('shorts')" id="tab-shorts" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-[#171717] text-white transition-all cursor-pointer">
+        🎬 1. คลังคลิปสั้นของฉัน (My Shorts)
+      </button>
+      <button onclick="switchTab('scripts')" id="tab-scripts" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold text-stone-600 hover:bg-stone-50 transition-all cursor-pointer">
+        ✍️ 2. ร่างสคริปต์ 3 ฉาก (Scripts)
+      </button>
+      <button onclick="switchTab('voices')" id="tab-voices" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold text-stone-600 hover:bg-stone-50 transition-all cursor-pointer">
+        🎵 3. เสียง & เพลงโปรด (BGM)
+      </button>
+      <button onclick="switchTab('plans')" id="tab-plans" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold text-stone-600 hover:bg-stone-50 transition-all cursor-pointer">
+        ⚡ 4. เครดิต & แพ็กเกจ
+      </button>
+    </div>
+
+    <!-- TAB 1: MY SHORTS -->
+    <div id="view-shorts" class="tab-view mt-5 space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        <!-- Short 1 -->
+        <div class="bg-white rounded-2xl border border-black/[0.08] p-5 shadow-xs hover:border-black/[0.2] transition-colors flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded-full border border-purple-200">รีวิวป้ายยา Affiliate</span>
+              <span class="text-[10px] text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full">✓ เรนเดอร์เสร็จแล้ว</span>
+            </div>
+            <h3 class="text-sm font-bold text-[#171717]">แก้วเก็บความเย็นมินิมอล ถือนอกบ้านเท่ๆ</h3>
+            <p class="text-xs text-stone-500 mt-1">สคริปต์ฮุก 3 วินาทีแรกเน้นเรื่องน้ำแข็งไม่ละลาย 24 ชม.</p>
+            <div class="mt-4 pt-3 border-t border-black/[0.05] text-[11px] text-stone-500 flex justify-between">
+              <span>ความยาว: 22 วินาที</span>
+              <span>สัดส่วน: 1080x1920 (9:16)</span>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-black/[0.05] flex items-center justify-between">
+            <button onclick="showToast('กำลังดาวน์โหลดไฟล์วิดีโอ MP4...')" class="text-xs font-bold text-purple-600 hover:underline">📥 โหลด MP4</button>
+            <button onclick="showToast('เปิดเล่นพรีวิววิดีโอ')" class="text-xs font-semibold text-stone-500 hover:text-stone-900">▶️ ดูพรีวิว</button>
+          </div>
+        </div>
+
+        <!-- Short 2 -->
+        <div class="bg-white rounded-2xl border border-black/[0.08] p-5 shadow-xs hover:border-black/[0.2] transition-colors flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-200">เกร็ดความรู้</span>
+              <span class="text-[10px] text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full">✓ เรนเดอร์เสร็จแล้ว</span>
+            </div>
+            <h3 class="text-sm font-bold text-[#171717]">3 วิธีนอนหลับลึก ไม่ตื่นกลางดึก</h3>
+            <p class="text-xs text-stone-500 mt-1">แชร์เทคนิคสุขภาพง่ายๆ ปรับอุณหภูมิห้องและลดแสงสีฟ้า</p>
+            <div class="mt-4 pt-3 border-t border-black/[0.05] text-[11px] text-stone-500 flex justify-between">
+              <span>ความยาว: 28 วินาที</span>
+              <span>สัดส่วน: 1080x1920 (9:16)</span>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-black/[0.05] flex items-center justify-between">
+            <button onclick="showToast('กำลังดาวน์โหลดไฟล์วิดีโอ MP4...')" class="text-xs font-bold text-purple-600 hover:underline">📥 โหลด MP4</button>
+            <button onclick="showToast('เปิดเล่นพรีวิววิดีโอ')" class="text-xs font-semibold text-stone-500 hover:text-stone-900">▶️ ดูพรีวิว</button>
+          </div>
+        </div>
+
+        <!-- Short 3 -->
+        <div class="bg-white rounded-2xl border border-black/[0.08] p-5 shadow-xs hover:border-black/[0.2] transition-colors flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">เล่าเรื่องสารคดี</span>
+              <span class="text-[10px] text-amber-600 font-semibold bg-amber-50 px-2 py-0.5 rounded-full">⏳ ร่างสคริปต์เสร็จ</span>
+            </div>
+            <h3 class="text-sm font-bold text-[#171717]">ความลับใต้ผืนน้ำ ลึกที่สุดในโลก</h3>
+            <p class="text-xs text-stone-500 mt-1">เรื่องราวร่องลึกมาเรียนาและสิ่งมีชีวิตใต้ทะเลลึก</p>
+            <div class="mt-4 pt-3 border-t border-black/[0.05] text-[11px] text-stone-500 flex justify-between">
+              <span>ความยาว: 30 วินาที</span>
+              <span>สถานะ: รอคลิกสร้าง</span>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-black/[0.05] flex items-center justify-between">
+            <a href="https://clip.thaid.online" class="text-xs font-bold text-purple-600 hover:underline">เรนเดอร์คลิปนี้ →</a>
+            <button onclick="showToast('คัดลอกบทสคริปต์')" class="text-xs font-semibold text-stone-500 hover:text-stone-900">📋 ก็อปปี้บท</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB 2: SCRIPTS -->
+    <div id="view-scripts" class="tab-view hidden mt-5 bg-white rounded-3xl border border-black/[0.08] p-6 shadow-xs">
+      <h2 class="text-base font-bold text-[#171717] pb-3 border-b border-black/[0.06]">สคริปต์ 3 ฉากที่บันทึกไว้ (3-Scene Scripts)</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 text-xs">
+        <div class="p-4 rounded-2xl border border-black/[0.06] bg-stone-50/50 space-y-2">
+          <div class="font-bold text-purple-700">ฉากที่ 1: คำเปิดหยุดนิ้วโป้ง (The Hook 0-3 วิ)</div>
+          <p class="text-stone-600">"รู้ไหมครับว่าแก้วน้ำใบนี้ เก็บน้ำแข็งได้ข้ามวันจนคุณต้องตกใจ!"</p>
+        </div>
+        <div class="p-4 rounded-2xl border border-black/[0.06] bg-stone-50/50 space-y-2">
+          <div class="font-bold text-emerald-700">ฉากที่ 2: จุดเด่น & ความคุ้มค่า (The Value 3-15 วิ)</div>
+          <p class="text-stone-600">"ทำจากสเตนเลสแท้เกรด 316 ผนังสุญญากาศสองชั้น ฝาซีลสนิทไม่มีรั่วซึม"</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: VOICES & BGM -->
+    <div id="view-voices" class="tab-view hidden mt-5 bg-white rounded-3xl border border-black/[0.08] p-6 shadow-xs">
+      <h2 class="text-base font-bold text-[#171717] pb-3 border-b border-black/[0.06]">เสียงพากย์ AI & เพลงประกอบโปรด</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 text-xs">
+        <div class="p-4 rounded-2xl border border-purple-200 bg-purple-50/40">
+          <div class="font-bold text-purple-800">เสียงพากย์: ชายหนุ่มมั่นใจ (Narrator Man Thai)</div>
+          <div class="text-stone-500 mt-1">Google AI Studio TTS Engine · น้ำเสียงสดใส น่าเชื่อถือ</div>
+        </div>
+        <div class="p-4 rounded-2xl border border-indigo-200 bg-indigo-50/40">
+          <div class="font-bold text-indigo-800">เพลงประกอบ: Lofi Chill Beat BGM</div>
+          <div class="text-stone-500 mt-1">จังหวะสบายๆ ไม่กลบเสียงพากย์ ถูกลิขสิทธิ์ 100%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: PLANS -->
+    <div id="view-plans" class="tab-view hidden mt-5 bg-white rounded-3xl border border-black/[0.08] p-6 shadow-xs">
+      <h2 class="text-base font-bold text-[#171717] pb-3 border-b border-black/[0.06]">แพ็กเกจ & เครดิตวิดีโอ</h2>
+      <div class="mt-4 p-5 rounded-2xl bg-purple-50/30 border border-purple-200 max-w-lg text-xs space-y-3">
+        <span class="text-[10px] font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded-full">PRO CREATOR PLAN</span>
+        <div class="text-xl font-bold text-purple-950">โควต้าสร้างคลิป 30 คลิป/เดือน</div>
+        <p class="text-stone-500 leading-relaxed">แพ็กเกจของคุณเปิดใช้งานคลังเสียงพากย์ Google AI Studio ครบทุกเสียง และเรนเดอร์คลิปวิดีโอ 9:16 ความละเอียด 1080x1920 พร้อมซับไตเติลภาษาไทย</p>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleSaasDropdown() {
+      const menu = document.getElementById('saasMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-view').forEach(v => v.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.remove('bg-[#171717]', 'text-white');
+        b.classList.add('text-stone-600');
+      });
+
+      const activeView = document.getElementById('view-' + tabId);
+      const activeBtn = document.getElementById('tab-' + tabId);
+      if (activeView) activeView.classList.remove('hidden');
+      if (activeBtn) {
+        activeBtn.classList.add('bg-[#171717]', 'text-white');
+        activeBtn.classList.remove('text-stone-600');
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.innerText = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
